@@ -9,7 +9,7 @@ class Event
         @start_date = Time.parse(start_date_to_save.to_s)
         @duration = duration_to_save.to_i
         @title = title_to_save.to_s
-        @attendees = attendees_to_save.to_s
+        @attendees = attendees_to_save
     end
 
     def postpone_24h
@@ -37,7 +37,7 @@ class Event
         puts ">Start date : #{@start_date}"
         puts ">Duration : #{@duration} min"
         print ">Attendees : "
-        puts @attendees
+        puts @attendees.join(", ")
     end
 
 end
