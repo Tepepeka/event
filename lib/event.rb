@@ -13,7 +13,7 @@ class Event
     end
 
     def postpone_24h
-        return @start_date + (24*60*60)
+        return @start_date += (24*60*60)
     end
 
     def end_date
@@ -29,7 +29,23 @@ class Event
     end
 
     def is_soon?
-        return @start_date < Time.now + 60*30
+        return @start_date < Time.now + (60*30)
+    end
+
+    def age_analysis
+        attendees_age = []
+        age_average = O
+
+        @attendees.each do |attendees|
+            attendees_age << attendees.age
+            average = average + attendees_age
+        end
+
+        average = average / @attendees.length
+
+        puts "attendees age :"
+        puts attendees_age.join(", ")
+        puts "average age = #{average}yrs!"
     end
 
     def to_s

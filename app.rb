@@ -18,4 +18,6 @@ puts my_event.is_future?
 puts my_event.postpone_24h
 =end
 
-EventCreator.new
+class App
+    EventCreator.new
+end
