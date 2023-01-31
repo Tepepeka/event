@@ -7,8 +7,8 @@ class User
     @@all_users = []
 
     def initialize(name_to_save,age_to_save)
-        @name = name_to_save.to_s
-        @age = age_to_save.to_i
+        @name = name_to_save
+        @age = age_to_save
         @@all_users << @name
         @@user_count = @@user_count + 1
     end

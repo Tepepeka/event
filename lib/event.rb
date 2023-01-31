@@ -6,9 +6,9 @@ class Event
     attr_accessor :start_date, :duration, :title, :attendees
   
     def initialize(start_date_to_save,duration_to_save,title_to_save,attendees_to_save)
-        @start_date = Time.parse(start_date_to_save.to_s)
-        @duration = duration_to_save.to_i
-        @title = title_to_save.to_s
+        @start_date = Time.parse(start_date_to_save)
+        @duration = duration_to_save
+        @title = title_to_save
         @attendees = attendees_to_save
     end
 
@@ -35,7 +35,7 @@ class Event
     def to_s
         puts ">Title : #{@title}"
         puts ">Start date : #{@start_date}"
-        puts ">Duration : #{@duration} min"
+        puts ">Duration : #{@duration}min"
         print ">Attendees : "
         puts @attendees.join(", ")
     end
